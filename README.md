@@ -1,5 +1,5 @@
 # parallelsql
-* A sql extenstion that parallizes sql queries using dblink
+*A sql extenstion that parallizes sql queries using dblink*
 
 Author: Copyright (c) 2015 Klaus Ackermann <klaus.ackermann@monash.edu>
 

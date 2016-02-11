@@ -17,15 +17,15 @@ STATEMENT=$(cat create_tl2_pop_ref.sql)
 #calculate the raster statistics in parallel
 $RUN_ON_MYDB <<SQL
 SELECT parallelsqlload
-(	'geo',						--database
+(	'geo',				--database
 	'tl2',		                --table
-	'map.gid',					--variable to partition by processes	
-    '$STATEMENT',				--the statement to executed in parallel 
-	'tl2_pop_ref',				--result table, has to be created first
-	'map',						--table alias used for split column
-	14,							--number of cores
-	'1=1',						--replace string in the query
-	100							--block size
+	'map.gid',			--variable to partition by processes	
+        '$STATEMENT',			--the statement to executed in parallel 
+	'tl2_pop_ref',			--result table, has to be created first
+	'map',				--table alias used for split column
+	16,				--number of cores
+	'1=1',				--replace string in the query
+	500	 			--block size
 );			
 SQL
 
