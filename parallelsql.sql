@@ -83,7 +83,7 @@ BEGIN
     conn := 'conn_' || current_proc; 
     RAISE NOTICE 'New Connection name: %',conn;
  
-    sql := 'SELECT dblink_connect(' || QUOTE_LITERAL(conn) || ',' || QUOTE_LITERAL(db) ||');';
+    sql := 'SELECT dblink_connect(' || QUOTE_LITERAL(conn) || ', ''dbname=' || db ||''');';
     execute sql;
 
 
